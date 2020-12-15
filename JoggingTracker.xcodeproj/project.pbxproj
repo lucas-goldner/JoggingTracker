@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D19A6112588219B0066361C /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D19A6102588219B0066361C /* DebugViewController.swift */; };
+		4D24DF582589478200123CE7 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF562589478100123CE7 /* CoreData.xcdatamodeld */; };
 		4DFFAB3D258814A50074784C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB3C258814A50074784C /* AppDelegate.swift */; };
 		4DFFAB3F258814A50074784C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB3E258814A50074784C /* SceneDelegate.swift */; };
 		4DFFAB41258814A50074784C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB40258814A50074784C /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4D19A6102588219B0066361C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		4D24DF572589478200123CE7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		4DFFAB39258814A50074784C /* JoggingTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFFAB3C258814A50074784C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DFFAB3E258814A50074784C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				4DFFAB47258814A60074784C /* LaunchScreen.storyboard */,
 				4DFFAB4A258814A60074784C /* Info.plist */,
 				4D19A6102588219B0066361C /* DebugViewController.swift */,
+				4D24DF562589478100123CE7 /* CoreData.xcdatamodeld */,
 			);
 			path = JoggingTracker;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				4DFFAB41258814A50074784C /* ViewController.swift in Sources */,
 				4DFFAB3D258814A50074784C /* AppDelegate.swift in Sources */,
+				4D24DF582589478200123CE7 /* CoreData.xcdatamodeld in Sources */,
 				4D19A6112588219B0066361C /* DebugViewController.swift in Sources */,
 				4DFFAB3F258814A50074784C /* SceneDelegate.swift in Sources */,
 			);
@@ -345,6 +349,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4D24DF562589478100123CE7 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D24DF572589478200123CE7 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 4D24DF572589478200123CE7 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4DFFAB31258814A50074784C /* Project object */;
 }
