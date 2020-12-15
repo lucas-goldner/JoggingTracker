@@ -10,6 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var GoRunButton: UIButton!
     @IBOutlet weak var OldRunsButton: UIButton!
+    @IBOutlet weak var DebugButtonStyle: UIButton!
+    @IBAction func GoRunAction(_ sender: Any) {
+    }
+    @IBAction func OldRunsAction(_ sender: Any) {
+    }
     @IBAction func DebugButton(_ sender: Any) {
     }
     

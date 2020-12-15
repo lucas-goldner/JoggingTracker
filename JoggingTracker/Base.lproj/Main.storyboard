@@ -41,6 +41,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="GoRunAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Is5-Ms-75b"/>
                                             <segue destination="t0M-dQ-3Zp" kind="show" id="g25-Ca-5US"/>
                                         </connections>
                                     </button>
@@ -54,6 +55,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="OldRunsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OBO-U0-Y0d"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-rA-gMB">
                                         <rect key="frame" x="135.66666666666666" y="543" width="142.99999999999997" height="72"/>
@@ -82,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home Boy" id="VYl-4z-mHE"/>
                     <connections>
+                        <outlet property="DebugButtonStyle" destination="ZWe-rA-gMB" id="mwD-aP-UPx"/>
                         <outlet property="GoRunButton" destination="sES-PC-x9g" id="SXa-bZ-1kv"/>
                         <outlet property="OldRunsButton" destination="dCI-6N-Nd8" id="PW9-Y8-6lC"/>
                     </connections>
