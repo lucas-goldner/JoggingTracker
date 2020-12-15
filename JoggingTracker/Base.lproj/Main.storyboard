@@ -24,56 +24,44 @@
                                         <rect key="frame" x="78" y="0.0" width="258" height="300"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sES-PC-x9g">
-                                        <rect key="frame" x="128.66666666666666" y="333" width="156.99999999999997" height="72"/>
+                                        <rect key="frame" x="10" y="333" width="394" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Go Run"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="GoRunAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Is5-Ms-75b"/>
                                             <segue destination="t0M-dQ-3Zp" kind="show" id="g25-Ca-5US"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCI-6N-Nd8">
-                                        <rect key="frame" x="76" y="438" width="262" height="72"/>
+                                        <rect key="frame" x="10" y="438" width="394" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="See old runs"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="OldRunsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OBO-U0-Y0d"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-rA-gMB">
-                                        <rect key="frame" x="135.66666666666666" y="543" width="142.99999999999997" height="72"/>
+                                        <rect key="frame" x="10" y="543" width="394" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Debug"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="DebugButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q5F-4l-bF8"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="sES-PC-x9g" firstAttribute="leading" secondItem="JYF-Y4-moR" secondAttribute="leading" constant="10" id="Ac9-qi-zGe"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZWe-rA-gMB" secondAttribute="trailing" constant="10" id="OLm-TX-WKk"/>
+                                    <constraint firstAttribute="trailing" secondItem="dCI-6N-Nd8" secondAttribute="trailing" constant="10" id="dHw-QV-CHA"/>
+                                    <constraint firstItem="ZWe-rA-gMB" firstAttribute="leading" secondItem="JYF-Y4-moR" secondAttribute="leading" constant="10" id="fkX-de-fSV"/>
+                                    <constraint firstAttribute="trailing" secondItem="sES-PC-x9g" secondAttribute="trailing" constant="10" id="lB5-ly-C19"/>
+                                    <constraint firstItem="dCI-6N-Nd8" firstAttribute="leading" secondItem="JYF-Y4-moR" secondAttribute="leading" constant="10" id="zWv-Np-hdO"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -88,6 +76,7 @@
                     <connections>
                         <outlet property="DebugButtonStyle" destination="ZWe-rA-gMB" id="mwD-aP-UPx"/>
                         <outlet property="GoRunButton" destination="sES-PC-x9g" id="SXa-bZ-1kv"/>
+                        <outlet property="Logo" destination="iGd-Iq-WvV" id="IDC-YQ-MBn"/>
                         <outlet property="OldRunsButton" destination="dCI-6N-Nd8" id="PW9-Y8-6lC"/>
                     </connections>
                 </viewController>

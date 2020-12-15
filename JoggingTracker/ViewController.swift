@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var Logo: UIImageView!
     @IBOutlet weak var GoRunButton: UIButton!
     @IBOutlet weak var OldRunsButton: UIButton!
     @IBOutlet weak var DebugButtonStyle: UIButton!
@@ -16,13 +17,20 @@ class ViewController: UIViewController {
     @IBAction func OldRunsAction(_ sender: Any) {
     }
     @IBAction func DebugButton(_ sender: Any) {
+        hideRun()
     }
+    let radius = 22
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        GoRunButton.layer.cornerRadius = CGFloat(radius)
+        OldRunsButton.layer.cornerRadius = CGFloat(radius)
+        DebugButtonStyle.layer.cornerRadius = CGFloat(radius)
     }
 
+    func hideRun() {
+        GoRunButton.isHidden = true
+    }
 
 }
 
