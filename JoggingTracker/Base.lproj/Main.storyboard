@@ -97,8 +97,44 @@
                                 <rect key="frame" x="20" y="88" width="374" height="744"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oLj-4s-yrM">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="714"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="693.66666666666663"/>
                                     </mapView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g83-Zn-zw6">
+                                        <rect key="frame" x="0.0" y="693.66666666666663" width="374" height="20.333333333333371"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG4-ZG-Lef">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="20.333333333333332"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="kai-uc-KWm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rv-rP-Csa">
+                                                <rect key="frame" x="100" y="0.0" width="174" height="20.333333333333332"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="m42-ik-6Ms"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBZ-du-Age">
+                                                <rect key="frame" x="274" y="0.0" width="100" height="20.333333333333332"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="oAm-Ri-Omh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVe-cL-vkZ">
                                         <rect key="frame" x="0.0" y="714" width="374" height="30"/>
                                         <subviews>
@@ -143,8 +179,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="hNt-iu-WbO"/>
                     <connections>
+                        <outlet property="DistanceLabel" destination="mG4-ZG-Lef" id="cFN-N7-qE5"/>
+                        <outlet property="PaceLabel" destination="NBZ-du-Age" id="Qle-pi-ICf"/>
                         <outlet property="StartButtonStyle" destination="GA4-8Q-aJu" id="PF6-bG-XtB"/>
                         <outlet property="StopStyle" destination="y8I-4f-auv" id="R4u-j3-38C"/>
+                        <outlet property="TimeLabel" destination="9Rv-rP-Csa" id="iz5-qd-3Yo"/>
                         <segue destination="PrW-DW-hgk" kind="show" identifier="RunnerSegue" destinationCreationSelector="RunnerSegue:sender:segueIdentifier:" id="scS-N2-JoO"/>
                     </connections>
                 </viewController>
@@ -222,7 +261,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="scS-N2-JoO"/>
+        <segue reference="feb-PG-oor"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>

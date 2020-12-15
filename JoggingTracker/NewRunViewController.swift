@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NewRunViewController: UIViewController {
     @IBOutlet weak var StartButtonStyle: UIButton!
@@ -16,12 +17,43 @@ class NewRunViewController: UIViewController {
     @IBAction func StopButton(_ sender: Any) {
         stopRun()
     }
+    @IBOutlet weak var DistanceLabel: UILabel!
+    @IBOutlet weak var TimeLabel: UILabel!
+    @IBOutlet weak var PaceLabel: UILabel!
     private var run: Run?
+    private let locationManager = LocationManager.shared
+    private var seconds = 0
+    private var timer: Timer?
+    private var distance = Measurement(value: 0, unit: UnitLength.meters)
+    private var locationList: [CLLocation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         StartButtonStyle.isHidden = false
         StopStyle.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      timer?.invalidate()
+      locationManager.stopUpdatingLocation()
+    }
+    
+    func eachSecond() {
+      seconds += 1
+      updateDisplay()
+    }
+
+    private func updateDisplay() {
+      let formattedDistance = FormatDisplay.distance(distance)
+      let formattedTime = FormatDisplay.time(seconds)
+      let formattedPace = FormatDisplay.pace(distance: distance,
+                                             seconds: seconds,
+                                             outputUnit: UnitSpeed.minutesPerMile)
+       
+        DistanceLabel.text = "Distance:  \(formattedDistance)"
+        TimeLabel.text = "Time:  \(formattedTime)"
+        PaceLabel.text = "Pace:  \(formattedPace)"
     }
     
     private func startRun() {
