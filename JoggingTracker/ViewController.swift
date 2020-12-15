@@ -29,7 +29,12 @@ class ViewController: UIViewController {
     }
 
     func hideRun() {
-        GoRunButton.isHidden = true
+        if(GoRunButton.isHidden) {
+            GoRunButton.isHidden = false
+        } else {
+            GoRunButton.isHidden = true
+        }
+      
     }
 
 }
