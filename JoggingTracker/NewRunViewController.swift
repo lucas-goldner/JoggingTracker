@@ -32,6 +32,20 @@ class NewRunViewController: UIViewController {
     private func stopRun() {
         StartButtonStyle.isHidden = false
         StopStyle.isHidden = true
+        let alertController = UIAlertController(title: "End run?",
+                                                message: "Do you wish to end your run?",
+                                                preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+          self.stopRun()
+          
+        })
+        alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
+          self.stopRun()
+          _ = self.navigationController?.popToRootViewController(animated: true)
+        })
+            
+        present(alertController, animated: true)
     }
     
 
@@ -46,3 +60,4 @@ class NewRunViewController: UIViewController {
     */
 
 }
+
