@@ -42,6 +42,7 @@
                                         <state key="normal" title="See old runs"/>
                                         <connections>
                                             <action selector="OldRunsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OBO-U0-Y0d"/>
+                                            <segue destination="PrW-DW-hgk" kind="show" id="feb-PG-oor"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-rA-gMB">
@@ -84,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="713.04347826086962" y="87.723214285714278"/>
         </scene>
-        <!--Debug View Controller-->
+        <!--New Run View Controller-->
         <scene sceneID="7tq-Ws-QDe">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="t0M-dQ-3Zp" customClass="DebugViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="t0M-dQ-3Zp" customClass="NewRunViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h6M-65-8LL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,6 +111,9 @@
                                                 <state key="normal" title="Start">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="StartButton:" destination="t0M-dQ-3Zp" eventType="touchUpInside" id="IvK-dv-L9y"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8I-4f-auv">
                                                 <rect key="frame" x="200" y="0.0" width="174" height="30"/>
@@ -118,6 +122,9 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="RQT-ON-Vf9"/>
                                                 </constraints>
                                                 <state key="normal" title="Stop"/>
+                                                <connections>
+                                                    <action selector="StopButton:" destination="t0M-dQ-3Zp" eventType="touchUpInside" id="51j-N6-cx1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -135,10 +142,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hNt-iu-WbO"/>
+                    <connections>
+                        <outlet property="StartButtonStyle" destination="GA4-8Q-aJu" id="PF6-bG-XtB"/>
+                        <outlet property="StopStyle" destination="y8I-4f-auv" id="R4u-j3-38C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBb-ry-aAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594.2028985507247" y="76.339285714285708"/>
+            <point key="canvasLocation" x="1572" y="-563"/>
+        </scene>
+        <!--Runs List View Controller-->
+        <scene sceneID="URM-Xh-p15">
+            <objects>
+                <viewController id="PrW-DW-hgk" customClass="RunsListViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcw-An-RVM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="P2m-0U-ilK"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2mw-HU-S9K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atN-X1-GV6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h6p-1l-3N0">
