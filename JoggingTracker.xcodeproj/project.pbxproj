@@ -11,6 +11,9 @@
 		4D24DF582589478200123CE7 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF562589478100123CE7 /* CoreData.xcdatamodeld */; };
 		4D24DF5B25894FCF00123CE7 /* RunsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF5A25894FCF00123CE7 /* RunsListViewController.swift */; };
 		4D24DF5E2589507800123CE7 /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF5D2589507800123CE7 /* NewRunViewController.swift */; };
+		4D24DF63258961F500123CE7 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF62258961F500123CE7 /* UnitExtensions.swift */; };
+		4D24DF662589623700123CE7 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF652589623700123CE7 /* FormatDisplay.swift */; };
+		4D24DF692589627A00123CE7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF682589627900123CE7 /* LocationManager.swift */; };
 		4DFFAB3D258814A50074784C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB3C258814A50074784C /* AppDelegate.swift */; };
 		4DFFAB3F258814A50074784C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB3E258814A50074784C /* SceneDelegate.swift */; };
 		4DFFAB41258814A50074784C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB40258814A50074784C /* ViewController.swift */; };
@@ -24,6 +27,9 @@
 		4D24DF572589478200123CE7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		4D24DF5A25894FCF00123CE7 /* RunsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsListViewController.swift; sourceTree = "<group>"; };
 		4D24DF5D2589507800123CE7 /* NewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
+		4D24DF62258961F500123CE7 /* UnitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
+		4D24DF652589623700123CE7 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		4D24DF682589627900123CE7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4DFFAB39258814A50074784C /* JoggingTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFFAB3C258814A50074784C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DFFAB3E258814A50074784C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 				4D24DF562589478100123CE7 /* CoreData.xcdatamodeld */,
 				4D24DF5A25894FCF00123CE7 /* RunsListViewController.swift */,
 				4D24DF5D2589507800123CE7 /* NewRunViewController.swift */,
+				4D24DF62258961F500123CE7 /* UnitExtensions.swift */,
+				4D24DF652589623700123CE7 /* FormatDisplay.swift */,
+				4D24DF682589627900123CE7 /* LocationManager.swift */,
 			);
 			path = JoggingTracker;
 			sourceTree = "<group>";
@@ -151,11 +160,14 @@
 			files = (
 				4D24DF5E2589507800123CE7 /* NewRunViewController.swift in Sources */,
 				4DFFAB41258814A50074784C /* ViewController.swift in Sources */,
+				4D24DF692589627A00123CE7 /* LocationManager.swift in Sources */,
 				4DFFAB3D258814A50074784C /* AppDelegate.swift in Sources */,
 				4D24DF582589478200123CE7 /* CoreData.xcdatamodeld in Sources */,
 				4D19A6112588219B0066361C /* DebugViewController.swift in Sources */,
 				4D24DF5B25894FCF00123CE7 /* RunsListViewController.swift in Sources */,
+				4D24DF662589623700123CE7 /* FormatDisplay.swift in Sources */,
 				4DFFAB3F258814A50074784C /* SceneDelegate.swift in Sources */,
+				4D24DF63258961F500123CE7 /* UnitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

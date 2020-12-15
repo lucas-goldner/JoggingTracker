@@ -37,8 +37,7 @@ class NewRunViewController: UIViewController {
                                                 preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
-          self.stopRun()
-          
+            self.sendToResult()
         })
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
           self.stopRun()
@@ -46,18 +45,16 @@ class NewRunViewController: UIViewController {
         })
             
         present(alertController, animated: true)
+        
+       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func sendToResult() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "doneRun") as! RunsListViewController
+        nextViewController.run = run
+        self.present(nextViewController, animated:true, completion:nil)
     }
-    */
 
 }
 

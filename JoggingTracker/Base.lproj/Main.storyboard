@@ -39,7 +39,7 @@
                                         <rect key="frame" x="10" y="438" width="394" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <state key="normal" title="See old runs"/>
+                                        <state key="normal" title="See last run"/>
                                         <connections>
                                             <action selector="OldRunsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OBO-U0-Y0d"/>
                                             <segue destination="PrW-DW-hgk" kind="show" id="feb-PG-oor"/>
@@ -145,7 +145,7 @@
                     <connections>
                         <outlet property="StartButtonStyle" destination="GA4-8Q-aJu" id="PF6-bG-XtB"/>
                         <outlet property="StopStyle" destination="y8I-4f-auv" id="R4u-j3-38C"/>
-                        <segue destination="PrW-DW-hgk" kind="showDetail" identifier="RunnerSegue" destinationCreationSelector="RunnerSegue:sender:segueIdentifier:" id="scS-N2-JoO"/>
+                        <segue destination="PrW-DW-hgk" kind="show" identifier="RunnerSegue" destinationCreationSelector="RunnerSegue:sender:segueIdentifier:" id="scS-N2-JoO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBb-ry-aAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,10 +155,36 @@
         <!--Runs List View Controller-->
         <scene sceneID="URM-Xh-p15">
             <objects>
-                <viewController id="PrW-DW-hgk" customClass="RunsListViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doneRun" id="PrW-DW-hgk" customClass="RunsListViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcw-An-RVM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Time" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c8U-RZ-hfy">
+                                <rect key="frame" x="87" y="119" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Pace" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-0Q-mF0">
+                                <rect key="frame" x="87" y="299" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Date" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m7j-FI-CAI">
+                                <rect key="frame" x="87" y="472" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="P2m-0U-ilK"/>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -166,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atN-X1-GV6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1572" y="151"/>
+            <point key="canvasLocation" x="1571.0144927536232" y="150.66964285714286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h6p-1l-3N0">
@@ -204,8 +230,14 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
