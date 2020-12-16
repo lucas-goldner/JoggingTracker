@@ -228,6 +228,11 @@
                         <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="2mw-HU-S9K"/>
+                    <connections>
+                        <outlet property="DateView" destination="m7j-FI-CAI" id="JuI-2j-fyZ"/>
+                        <outlet property="PaceView" destination="7jp-0Q-mF0" id="IpK-Gj-jIJ"/>
+                        <outlet property="TimeView" destination="c8U-RZ-hfy" id="KoK-Te-PDc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atN-X1-GV6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
