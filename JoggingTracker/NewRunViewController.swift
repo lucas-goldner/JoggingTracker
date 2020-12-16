@@ -77,9 +77,11 @@ class NewRunViewController: UIViewController {
                                                 preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+            self.locationManager.stopUpdatingLocation()
             self.saveRun()
             self.sendToResult()
         })
+        self.locationManager.stopUpdatingLocation()
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
           self.stopRun()
           _ = self.navigationController?.popToRootViewController(animated: true)
