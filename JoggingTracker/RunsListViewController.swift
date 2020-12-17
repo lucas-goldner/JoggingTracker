@@ -33,25 +33,7 @@ class RunsListViewController: UIViewController {
         DateView.text = formattedDate
         TimeView.text = "\(formattedTime)"
         PaceView.text = "\(formattedPace)"
-        loadMap()
-    }
-    
-    private func loadMap() {
-      guard
-        let locations = run.locations,
-        locations.count > 0,
-        let region = mapRegion()
-      else {
-          let alert = UIAlertController(title: "Error",
-                                        message: "Sorry, this run has no locations saved",
-                                        preferredStyle: .alert)
-          alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-          present(alert, animated: true)
-          return
-      }
         
     }
-    
-    
 
 }
