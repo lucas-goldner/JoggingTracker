@@ -200,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Time" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c8U-RZ-hfy">
-                                <rect key="frame" x="87" y="119" width="240" height="128"/>
+                                <rect key="frame" x="87" y="294" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -208,7 +208,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Pace" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-0Q-mF0">
-                                <rect key="frame" x="87" y="299" width="240" height="128"/>
+                                <rect key="frame" x="87" y="461" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -216,7 +216,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Date" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m7j-FI-CAI">
-                                <rect key="frame" x="87" y="472" width="240" height="128"/>
+                                <rect key="frame" x="87" y="634" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Distance" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CQY-Is-qfm">
+                                <rect key="frame" x="87" y="123" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -230,6 +238,7 @@
                     <navigationItem key="navigationItem" id="2mw-HU-S9K"/>
                     <connections>
                         <outlet property="DateView" destination="m7j-FI-CAI" id="JuI-2j-fyZ"/>
+                        <outlet property="DistanceView" destination="CQY-Is-qfm" id="s4k-jX-Z2M"/>
                         <outlet property="PaceView" destination="7jp-0Q-mF0" id="IpK-Gj-jIJ"/>
                         <outlet property="TimeView" destination="c8U-RZ-hfy" id="KoK-Te-PDc"/>
                     </connections>

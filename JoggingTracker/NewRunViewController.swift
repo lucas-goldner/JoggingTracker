@@ -70,26 +70,22 @@ class NewRunViewController: UIViewController {
     }
     
     private func stopRun() {
-        StartButtonStyle.isHidden = false
-        StopStyle.isHidden = true
         let alertController = UIAlertController(title: "End run?",
                                                 message: "Do you wish to end your run?",
                                                 preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+        alertController.addAction(UIAlertAction(title: "Save", style: .default) { [self] _ in
+            self.StartButtonStyle.isHidden = false
+            self.StopStyle.isHidden = true
             self.locationManager.stopUpdatingLocation()
             self.saveRun()
             self.sendToResult()
         })
-        self.locationManager.stopUpdatingLocation()
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
-          self.stopRun()
-          _ = self.navigationController?.popToRootViewController(animated: true)
+            self.StartButtonStyle.isHidden = true
+            self.StopStyle.isHidden = false
         })
-            
         present(alertController, animated: true)
-        locationManager.stopUpdatingLocation()
-       
     }
     
     func sendToResult() {
@@ -100,16 +96,17 @@ class NewRunViewController: UIViewController {
     }
     
     private func startLocationUpdates() {
-      locationManager.delegate = self
-      locationManager.activityType = .fitness
-      locationManager.distanceFilter = 10
-      locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+        locationManager.activityType = .fitness
+        locationManager.distanceFilter = 10
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.startUpdatingLocation()
     }
     
     private func saveRun() {
       let newRun = Run(context: CoreDataStack.context)
       newRun.distance = distance.value
-      newRun.duration = Int16(seconds)
+        newRun.duration = Int16(seconds)
       newRun.timestamp = Date()
       
       for location in locationList {
@@ -123,6 +120,7 @@ class NewRunViewController: UIViewController {
       CoreDataStack.saveContext()
       
       run = newRun
+        
     }
 
 }
