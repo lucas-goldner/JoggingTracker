@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBAction func OldRunsAction(_ sender: Any) {
     }
     @IBAction func DebugButton(_ sender: Any) {
-        hideRun()
+        //hideRun()
     }
     let radius = 22
     
@@ -28,14 +28,14 @@ class ViewController: UIViewController {
         DebugButtonStyle.layer.cornerRadius = CGFloat(radius)
     }
 
-    func hideRun() {
-        if(GoRunButton.isHidden) {
-            GoRunButton.isHidden = false
-        } else {
-            GoRunButton.isHidden = true
-        }
-      
-    }
+//    func hideRun() {
+//        if(GoRunButton.isHidden) {
+//            GoRunButton.isHidden = false
+//        } else {
+//            GoRunButton.isHidden = true
+//        }
+//
+//    }
 
 }
 
