@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>JoggingTracker needs your location in order to track your runs</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>JoggingTracker needs your location in order to track your runs</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>JoggingTracker needs your location in order to track your runs</string>
 	<key>Privacy – Location When In Use Usage Description</key>
 	<string>JoggingTracker needs your location in order to track your runs</string>
 	<key>CFBundleDevelopmentRegion</key>
