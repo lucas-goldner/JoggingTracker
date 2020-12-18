@@ -17,29 +17,29 @@ class DebugViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    struct Todo: Codable {
-        let userID, id: Int
-        let title: String
-        let completed: Bool
+    struct Demon: Codable {
+        let level: Int
+        let name, id, weakness, strength, imun, absorb, reflect: String
+
 
         enum CodingKeys: String, CodingKey {
-            case userID = "userId"
-            case id, title, completed
+            case id = "id"
+            case name, level, weakness, strength, imun, absorb, reflect
         }
     }
     
+   
+    
     func getApiResponse() {
-        let urlString = "https://jsonplaceholder.typicode.com/todos/1"
+        let urlString = "http://159.69.196.125:4220/api/demons/1"
                guard let url = URL(string: urlString) else {return}
                URLSession.shared.dataTask(with: url) { (data, res, error) in
            
                    do {
-                       let todoDetails = try JSONDecoder().decode(Todo.self, from: data!)
+                       let demonDetails = try JSONDecoder().decode(Demon.self, from: data!)
                        DispatchQueue.main.async {
                  
-                        self.OutputView.text = todoDetails.title
-                        self.OutputView.text.append(" "+String(todoDetails.userID))
-                        self.OutputView.text.append(" "+String(todoDetails.completed))
+                        self.OutputView.text = demonDetails.name
                        }
                    } catch {}
                }.resume()
