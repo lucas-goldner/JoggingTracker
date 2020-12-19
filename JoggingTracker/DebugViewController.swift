@@ -51,5 +51,14 @@ class DebugViewController: UIViewController, WebSocketDelegate {
           }
       }
     
+    func handleError(_ error: Error?) {
+          if let e = error as? WSError {
+              print("websocket encountered an error: \(e.message)")
+          } else if let e = error {
+              print("websocket encountered an error: \(e.localizedDescription)")
+          } else {
+              print("websocket encountered an error")
+          }
+      }
 }
 
