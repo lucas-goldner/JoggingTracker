@@ -16,6 +16,7 @@ class DebugViewController: UIViewController, WebSocketDelegate {
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
             sender.title = "Connect"
+            OutputView.text = "Connected"
             socket.disconnect()
         } else {
             sender.title = "Disconnect"
@@ -25,7 +26,7 @@ class DebugViewController: UIViewController, WebSocketDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = URLRequest(url: URL(string: "http://localhost:8080")!) //https://localhost:8080
+        var request = URLRequest(url: URL(string: "ws://localhost:1337/")!) //https://localhost:5100
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -69,7 +70,5 @@ class DebugViewController: UIViewController, WebSocketDelegate {
               print("websocket encountered an error")
           }
       }
-    
-    
 }
 
