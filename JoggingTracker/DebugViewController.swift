@@ -13,6 +13,15 @@ class DebugViewController: UIViewController, WebSocketDelegate {
      var isConnected = false
      let server = WebSocketServer()
     @IBOutlet weak var OutputView: UITextView!
+    @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
+        if isConnected {
+            sender.title = "Connect"
+            socket.disconnect()
+        } else {
+            sender.title = "Disconnect"
+            socket.connect()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,5 +69,7 @@ class DebugViewController: UIViewController, WebSocketDelegate {
               print("websocket encountered an error")
           }
       }
+    
+    
 }
 
