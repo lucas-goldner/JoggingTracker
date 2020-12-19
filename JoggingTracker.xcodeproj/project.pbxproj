@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		336F1E32EB5C9A0AAA66C025 /* Pods_JoggingTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945E49DCDF3FB9213032B66E /* Pods_JoggingTracker.framework */; };
 		4D19A6112588219B0066361C /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D19A6102588219B0066361C /* DebugViewController.swift */; };
 		4D24DF582589478200123CE7 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF562589478100123CE7 /* CoreData.xcdatamodeld */; };
 		4D24DF5B25894FCF00123CE7 /* RunsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF5A25894FCF00123CE7 /* RunsListViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3250534FA61A6D56557BD59E /* Pods-JoggingTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggingTracker.release.xcconfig"; path = "Target Support Files/Pods-JoggingTracker/Pods-JoggingTracker.release.xcconfig"; sourceTree = "<group>"; };
 		4D19A6102588219B0066361C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		4D24DF572589478200123CE7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		4D24DF5A25894FCF00123CE7 /* RunsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsListViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		4DFFAB45258814A60074784C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DFFAB48258814A60074784C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DFFAB4A258814A60074784C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CC61419A09C99D8A6C95FD6 /* Pods-JoggingTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggingTracker.debug.xcconfig"; path = "Target Support Files/Pods-JoggingTracker/Pods-JoggingTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		945E49DCDF3FB9213032B66E /* Pods_JoggingTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggingTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336F1E32EB5C9A0AAA66C025 /* Pods_JoggingTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				4DFFAB3B258814A50074784C /* JoggingTracker */,
 				4DFFAB3A258814A50074784C /* Products */,
+				F6BB5BA1E23BEDF3C8729E22 /* Pods */,
+				B12B3A5A8F74F3269BD799A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +98,24 @@
 			path = JoggingTracker;
 			sourceTree = "<group>";
 		};
+		B12B3A5A8F74F3269BD799A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				945E49DCDF3FB9213032B66E /* Pods_JoggingTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6BB5BA1E23BEDF3C8729E22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CC61419A09C99D8A6C95FD6 /* Pods-JoggingTracker.debug.xcconfig */,
+				3250534FA61A6D56557BD59E /* Pods-JoggingTracker.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DFFAB4D258814A60074784C /* Build configuration list for PBXNativeTarget "JoggingTracker" */;
 			buildPhases = (
+				0C4977BA928710CAA2088E6C /* [CP] Check Pods Manifest.lock */,
 				4DFFAB35258814A50074784C /* Sources */,
 				4DFFAB36258814A50074784C /* Frameworks */,
 				4DFFAB37258814A50074784C /* Resources */,
+				31212232CCFD513A7F127445 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +182,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C4977BA928710CAA2088E6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JoggingTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31212232CCFD513A7F127445 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JoggingTracker/Pods-JoggingTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JoggingTracker/Pods-JoggingTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JoggingTracker/Pods-JoggingTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DFFAB35258814A50074784C /* Sources */ = {
@@ -315,6 +384,7 @@
 		};
 		4DFFAB4E258814A60074784C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC61419A09C99D8A6C95FD6 /* Pods-JoggingTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -335,6 +405,7 @@
 		};
 		4DFFAB4F258814A60074784C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3250534FA61A6D56557BD59E /* Pods-JoggingTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
