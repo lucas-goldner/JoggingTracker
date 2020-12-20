@@ -263,19 +263,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-XZ-glT">
-                                <rect key="frame" x="87" y="126" width="240" height="285"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-XZ-glT">
+                                <rect key="frame" x="87" y="126" width="240" height="168"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGJ-L9-F01">
-                                <rect key="frame" x="87" y="470" width="240" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGJ-L9-F01">
+                                <rect key="frame" x="87" y="332" width="240" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Disconnect"/>
+                                <state key="normal" title="Connect"/>
                                 <connections>
                                     <action selector="ConnectButton:" destination="mHk-jr-JL6" eventType="touchUpInside" id="OFb-gv-f9c"/>
                                 </connections>
@@ -284,12 +283,18 @@
                         <viewLayoutGuide key="safeArea" id="9yI-NN-qe8"/>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ScR-XZ-glT" firstAttribute="leading" secondItem="9yI-NN-qe8" secondAttribute="leading" constant="87" id="6Ou-Nu-onA"/>
+                            <constraint firstItem="9yI-NN-qe8" firstAttribute="trailing" secondItem="ScR-XZ-glT" secondAttribute="trailing" constant="87" id="XSq-8H-CUA"/>
+                            <constraint firstItem="fGJ-L9-F01" firstAttribute="top" secondItem="ScR-XZ-glT" secondAttribute="bottom" constant="38" id="eYn-ld-yqV"/>
                             <constraint firstItem="9yI-NN-qe8" firstAttribute="trailing" secondItem="fGJ-L9-F01" secondAttribute="trailing" constant="87" id="kZB-Ve-7Uo"/>
                             <constraint firstItem="fGJ-L9-F01" firstAttribute="leading" secondItem="9yI-NN-qe8" secondAttribute="leading" constant="87" id="lkd-b9-7lP"/>
+                            <constraint firstItem="ScR-XZ-glT" firstAttribute="top" secondItem="9yI-NN-qe8" secondAttribute="top" constant="38" id="mxf-ue-sPx"/>
+                            <constraint firstItem="9yI-NN-qe8" firstAttribute="bottom" secondItem="fGJ-L9-F01" secondAttribute="bottom" constant="500" id="wDW-Z3-1a3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zbd-ka-byR"/>
                     <connections>
+                        <outlet property="ConnectView" destination="fGJ-L9-F01" id="CJZ-aa-omi"/>
                         <outlet property="OutputView" destination="ScR-XZ-glT" id="7vx-oa-1h1"/>
                     </connections>
                 </viewController>
@@ -325,7 +330,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="feb-PG-oor"/>
+        <segue reference="scS-N2-JoO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>

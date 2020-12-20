@@ -13,24 +13,23 @@ class DebugViewController: UIViewController, WebSocketDelegate {
      var isConnected = false
      let server = WebSocketServer()
     @IBOutlet weak var OutputView: UITextView!
+    @IBOutlet weak var ConnectView: UIButton!
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
-            sender.title = "Connect"
-            OutputView.text = "Connected"
+            ConnectView.setTitle("Connect", for: .normal)
             socket.disconnect()
         } else {
-            sender.title = "Disconnect"
+            ConnectView.setTitle("Disconnect", for: .normal)
             socket.connect()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = URLRequest(url: URL(string: "ws://localhost:1337/")!) //https://localhost:5100
+        var request = URLRequest(url: URL(string: "ws://159.69.196.125:1337/")!) //https://localhost:5100
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
-        socket.connect()
     }
 
     func didReceive(event: WebSocketEvent, client: WebSocket) {
@@ -38,6 +37,7 @@ class DebugViewController: UIViewController, WebSocketDelegate {
           case .connected(let headers):
               isConnected = true
               print("websocket is connected: \(headers)")
+            //OutputView.text = "websocket is connected: \(headers)"
           case .disconnected(let reason, let code):
               isConnected = false
               print("websocket is disconnected: \(reason) with code: \(code)")
