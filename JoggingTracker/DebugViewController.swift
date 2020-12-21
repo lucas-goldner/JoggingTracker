@@ -29,6 +29,7 @@ class DebugViewController: UIViewController, WebSocketDelegate {
     @IBAction func SendButton(_ sender: Any) {
     }
     @IBAction func LoadButton(_ sender: Any) {
+        getUserInfo()
     }
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
@@ -86,5 +87,21 @@ class DebugViewController: UIViewController, WebSocketDelegate {
               print("websocket encountered an error")
           }
       }
+    
+    func getUserInfo() {
+        let userID = Auth.auth().currentUser?.uid
+        print(userID)
+        let docRef = db.collection("users").document(userID!)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+
+    }
 }
 
