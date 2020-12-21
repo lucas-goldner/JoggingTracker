@@ -7,13 +7,22 @@
 
 import UIKit
 import Starscream
+import FirebaseAuth
 
 class DebugViewController: UIViewController, WebSocketDelegate {
     var socket: WebSocket!
     var isConnected = false
     let server = WebSocketServer()
     @IBOutlet weak var OutputView: UITextView!
+    @IBOutlet weak var SendView: UITextView!
     @IBOutlet weak var ConnectView: UIButton!
+    @IBOutlet weak var EmailView: UITextView!
+    @IBOutlet weak var PasswordView: UITextView!
+    @IBAction func LoginButton(_ sender: Any) {
+        Auth.auth().signIn(withEmail: EmailView.text, password: PasswordView.text) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+        }
+    }
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
             ConnectView.setTitle("Connect", for: .normal)

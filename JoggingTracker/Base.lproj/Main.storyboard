@@ -304,6 +304,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="ConnectButton:" destination="mHk-jr-JL6" eventType="touchUpInside" id="VEt-RT-zJT"/>
+                                    <action selector="LoginButton:" destination="mHk-jr-JL6" eventType="touchUpInside" id="0ZU-M8-aIU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firebase Stuff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-B2-gTK">
@@ -355,7 +356,10 @@
                     <navigationItem key="navigationItem" id="Zbd-ka-byR"/>
                     <connections>
                         <outlet property="ConnectView" destination="fGJ-L9-F01" id="CJZ-aa-omi"/>
+                        <outlet property="EmailView" destination="bzC-Qb-ZR8" id="QSP-Ji-WJG"/>
                         <outlet property="OutputView" destination="ScR-XZ-glT" id="7vx-oa-1h1"/>
+                        <outlet property="PasswordView" destination="DvR-JJ-DBO" id="QOc-Jl-0M9"/>
+                        <outlet property="SendView" destination="LkI-Vx-Mx1" id="nF1-Wm-BgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eaf-od-Khl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
