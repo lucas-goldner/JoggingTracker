@@ -9,9 +9,9 @@ import UIKit
 import Starscream
 
 class DebugViewController: UIViewController, WebSocketDelegate {
-     var socket: WebSocket!
-     var isConnected = false
-     let server = WebSocketServer()
+    var socket: WebSocket!
+    var isConnected = false
+    let server = WebSocketServer()
     @IBOutlet weak var OutputView: UITextView!
     @IBOutlet weak var ConnectView: UIButton!
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {

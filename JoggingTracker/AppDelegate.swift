@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let locationManager = LocationManager.shared
         locationManager.requestWhenInUseAuthorization()
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
