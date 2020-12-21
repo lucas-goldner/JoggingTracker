@@ -8,11 +8,14 @@
 import UIKit
 import Starscream
 import FirebaseAuth
+import FirebaseFirestore
 
 class DebugViewController: UIViewController, WebSocketDelegate {
     var socket: WebSocket!
     var isConnected = false
     let server = WebSocketServer()
+    let db = Firestore.firestore()
+   
     @IBOutlet weak var OutputView: UITextView!
     @IBOutlet weak var SendView: UITextView!
     @IBOutlet weak var ConnectView: UIButton!
@@ -22,6 +25,10 @@ class DebugViewController: UIViewController, WebSocketDelegate {
         Auth.auth().signIn(withEmail: EmailView.text, password: PasswordView.text) { [weak self] authResult, error in
           guard let strongSelf = self else { return }
         }
+    }
+    @IBAction func SendButton(_ sender: Any) {
+    }
+    @IBAction func LoadButton(_ sender: Any) {
     }
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
