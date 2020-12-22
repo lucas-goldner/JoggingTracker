@@ -9,7 +9,11 @@ import UIKit
 import CoreLocation
 import Firebase
 
-class NewRunViewController: UIViewController {
+class NewRunViewController: UIViewController, WebSocketConnectionDelegate {
+    var isConnected = false
+    let db = Firestore.firestore()
+    var socket: NativeWebSocket?
+    
     @IBOutlet weak var StartButtonStyle: UIButton!
     @IBAction func StartButton(_ sender: Any) {
         startRun()
@@ -69,6 +73,29 @@ class NewRunViewController: UIViewController {
           self.eachSecond()
         }
         startLocationUpdates()
+        
+        //Websocket
+        socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+        socket?.delegate = self
+        getUserInfo()
+        sendDataToServer()
+    }
+    
+    func getUserInfo() {
+        let userID = Auth.auth().currentUser?.uid
+        let docRef = db.collection("users").document(userID!)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                print(document.get("friends"))
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+    
+    func sendDateToServer() {
+        
     }
     
     private func stopRun() {
@@ -124,6 +151,24 @@ class NewRunViewController: UIViewController {
       run = newRun
         
     }
+    
+    func onConnected(connection: WebSocketConnection) {
+           print("Connected!")
+       }
+       
+       func onDisconnected(connection: WebSocketConnection, error: Error?) {
+           print("Disconnected!")
+       }
+       
+       func onError(connection: WebSocketConnection, error: Error) {
+           print("Error \(error)")
+       }
+       
+       func onMessage(connection: WebSocketConnection, text: String) {
+           DispatchQueue.main.async {
+               //self.SendView.text.append("\(text)\n")
+           }
+       }
 
 }
 

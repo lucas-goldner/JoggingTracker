@@ -28,6 +28,7 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
     @IBAction func SendButton(_ sender: Any) {
         let pseudoJson = "{type:message , data:{time:1472513071731,text:😍,author:iPhone Simulator,color:orange}}"
         socket?.send(text: pseudoJson)
+    
         //socket?.send(text: "Mother")
     }
     @IBAction func LoadButton(_ sender: Any) {
@@ -71,7 +72,6 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
     
     func getUserInfo() {
         let userID = Auth.auth().currentUser?.uid
-        print(userID)
         let docRef = db.collection("users").document(userID!)
 
         docRef.getDocument { (document, error) in
