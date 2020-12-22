@@ -26,14 +26,9 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
         }
     }
     @IBAction func SendButton(_ sender: Any) {
-        let json = "{ \"location\": [{ \"timestamp\": \"10:00\", \"latitude\": \"45\", \"longitude\": 30 }, { \"timestamp\": \"12:00\", \"latitude\": \"12\", \"longitude\": 12 }, { \"timestamp\": \"22:00\", \"longitude\": \"10\", \"longitude\": 5 } ] }"
-        if let data = json.data(using: .utf8) {
-            if let json = try? JSON(data: data) {
-                socket?.send(data: data)
-            }
-        }
-        socket?.send(text: "Mother")
-    
+        let pseudoJson = "{type:message , data:{time:1472513071731,text:😍,author:iPhone Simulator,color:orange}}"
+        socket?.send(text: pseudoJson)
+        //socket?.send(text: "Mother")
     }
     @IBAction func LoadButton(_ sender: Any) {
         getUserInfo()
@@ -41,6 +36,7 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
             ConnectView.setTitle("Connect", for: .normal)
+            
 
         } else {
             ConnectView.setTitle("Disconnect", for: .normal)
@@ -72,8 +68,6 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
         socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
         socket?.delegate = self
     }
-
-  
     
     func getUserInfo() {
         let userID = Auth.auth().currentUser?.uid
@@ -88,6 +82,24 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
                 print("Document does not exist")
             }
         }
+    }
+    
+    func jsonToData(json: Any) -> Data? {
+        do {
+            return try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+        } catch let myJSONError {
+            print(myJSONError)
+        }
+        return nil;
+    }
+    
+    func dataToJSON(data: Data) -> Any? {
+       do {
+           return try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+       } catch let myJSONError {
+           print(myJSONError)
+       }
+       return nil
     }
 }
 

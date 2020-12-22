@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class NewRunViewController: UIViewController {
     @IBOutlet weak var StartButtonStyle: UIButton!
@@ -31,6 +32,7 @@ class NewRunViewController: UIViewController {
         super.viewDidLoad()
         StartButtonStyle.isHidden = false
         StopStyle.isHidden = true
+       
     }
     
     override func viewWillDisappear(_ animated: Bool) {
