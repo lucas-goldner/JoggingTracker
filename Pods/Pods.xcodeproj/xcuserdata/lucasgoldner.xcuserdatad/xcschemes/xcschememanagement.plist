@@ -35,7 +35,7 @@
 		<key>FirebaseCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
@@ -102,10 +102,10 @@
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
-		<key>Starscream.xcscheme</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>20</integer>
 		</dict>

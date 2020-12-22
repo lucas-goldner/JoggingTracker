@@ -330,13 +330,13 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
-  - Starscream (4.0.4)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Firebase/Analytics (= 7.2-M1)
   - Firebase/Auth (= 7.2-M1)
   - Firebase/Firestore (= 7.2-M1)
-  - Starscream
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -358,7 +358,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
-    - Starscream
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -379,8 +379,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: c40e89a6e26e2d76f5f0242ba1d9334da835ac14
+PODFILE CHECKSUM: b2fd6f845143c95338ee577999d17d1e2c845b54
 
 COCOAPODS: 1.10.0

@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import SwiftyJSON
 
 class DebugViewController: UIViewController, WebSocketConnectionDelegate {
     var isConnected = false

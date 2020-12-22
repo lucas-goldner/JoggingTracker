@@ -7,7 +7,7 @@ target 'JoggingTracker' do
   use_frameworks!
 
   # Pods for JoggingTracker
-  pod "Starscream"
+  pod 'SwiftyJSON', '~> 4.0'
   # Add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics', '7.2-M1'
 
