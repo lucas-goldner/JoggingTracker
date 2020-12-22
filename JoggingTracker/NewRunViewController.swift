@@ -94,7 +94,7 @@ class NewRunViewController: UIViewController, WebSocketConnectionDelegate {
         }
     }
     
-    func sendDateToServer() {
+    func sendDataToServer() {
         
     }
     
