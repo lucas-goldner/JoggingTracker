@@ -26,6 +26,12 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
         }
     }
     @IBAction func SendButton(_ sender: Any) {
+        let json = "{ \"location\": [{ \"timestamp\": \"10:00\", \"latitude\": \"45\", \"longitude\": 30 }, { \"timestamp\": \"12:00\", \"latitude\": \"12\", \"longitude\": 12 }, { \"timestamp\": \"22:00\", \"longitude\": \"10\", \"longitude\": 5 } ] }"
+        if let data = json.data(using: .utf8) {
+            if let json = try? JSON(data: data) {
+                socket?.send(data: data)
+            }
+        }
         socket?.send(text: "Mother")
     
     }
