@@ -6,15 +6,13 @@
 //
 
 import UIKit
-import Starscream
 import FirebaseAuth
 import FirebaseFirestore
 
-class DebugViewController: UIViewController, WebSocketDelegate {
-    var socket: WebSocket!
+class DebugViewController: UIViewController, WebSocketConnectionDelegate {
     var isConnected = false
-    let server = WebSocketServer()
     let db = Firestore.firestore()
+    var socket: NativeWebSocket?
    
     @IBOutlet weak var OutputView: UITextView!
     @IBOutlet weak var SendView: UITextView!
@@ -27,6 +25,8 @@ class DebugViewController: UIViewController, WebSocketDelegate {
         }
     }
     @IBAction func SendButton(_ sender: Any) {
+        socket?.send(text: "Mother")
+    
     }
     @IBAction func LoadButton(_ sender: Any) {
         getUserInfo()
@@ -34,59 +34,39 @@ class DebugViewController: UIViewController, WebSocketDelegate {
     @IBAction func ConnectButton(_ sender: UIBarButtonItem) {
         if isConnected {
             ConnectView.setTitle("Connect", for: .normal)
-            socket.disconnect()
+
         } else {
             ConnectView.setTitle("Disconnect", for: .normal)
-            socket.connect()
+
         }
     }
     
+    func onConnected(connection: WebSocketConnection) {
+           print("Connected!")
+       }
+       
+       func onDisconnected(connection: WebSocketConnection, error: Error?) {
+           print("Disconnected!")
+       }
+       
+       func onError(connection: WebSocketConnection, error: Error) {
+           print("Error \(error)")
+       }
+       
+       func onMessage(connection: WebSocketConnection, text: String) {
+           DispatchQueue.main.async {
+               self.SendView.text.append("\(text)\n")
+           }
+       }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = URLRequest(url: URL(string: "ws://159.69.196.125:1337/")!) //https://localhost:5100
-        request.timeoutInterval = 5
-        socket = WebSocket(request: request)
-        socket.delegate = self
+        socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+        socket?.delegate = self
     }
 
-    func didReceive(event: WebSocketEvent, client: WebSocket) {
-          switch event {
-          case .connected(let headers):
-              isConnected = true
-              print("websocket is connected: \(headers)")
-            //OutputView.text = "websocket is connected: \(headers)"
-          case .disconnected(let reason, let code):
-              isConnected = false
-              print("websocket is disconnected: \(reason) with code: \(code)")
-          case .text(let string):
-              print("Received text: \(string)")
-          case .binary(let data):
-              print("Received data: \(data.count)")
-          case .ping(_):
-              break
-          case .pong(_):
-              break
-          case .viabilityChanged(_):
-              break
-          case .reconnectSuggested(_):
-              break
-          case .cancelled:
-              isConnected = false
-          case .error(let error):
-              isConnected = false
-              handleError(error)
-          }
-      }
-    
-    func handleError(_ error: Error?) {
-          if let e = error as? WSError {
-              print("websocket encountered an error: \(e.message)")
-          } else if let e = error {
-              print("websocket encountered an error: \(e.localizedDescription)")
-          } else {
-              print("websocket encountered an error")
-          }
-      }
+  
     
     func getUserInfo() {
         let userID = Auth.auth().currentUser?.uid
@@ -101,7 +81,6 @@ class DebugViewController: UIViewController, WebSocketDelegate {
                 print("Document does not exist")
             }
         }
-
     }
 }
 
