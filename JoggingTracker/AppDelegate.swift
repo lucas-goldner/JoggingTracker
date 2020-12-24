@@ -7,11 +7,13 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
- let gcmMessageIDKey = "gcmMessageIDKey"
+class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelegate {
+    var isConnected = false
+    var socket: NativeWebSocket?
+    let gcmMessageIDKey = "gcmMessageIDKey"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let locationManager = LocationManager.shared
@@ -94,6 +96,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       completionHandler(UIBackgroundFetchResult.newData)
     }
+    
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        var locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        var currentLocation: CLLocation!
+        let currentUser = (Auth.auth().currentUser?.uid)!
+        if
+           CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+           CLLocationManager.authorizationStatus() ==  .authorizedAlways
+        {
+            currentLocation = locManager.location
+            print(currentLocation.coordinate.latitude)
+            print(currentLocation.coordinate.longitude)
+            socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+            socket?.delegate = self
+            socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser))
+        }
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication){
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        var locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        var currentLocation: CLLocation!
+        let currentUser = (Auth.auth().currentUser?.uid)!
+        if
+           CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+           CLLocationManager.authorizationStatus() ==  .authorizedAlways
+        {
+            currentLocation = locManager.location
+            print(currentLocation.coordinate.latitude)
+            print(currentLocation.coordinate.longitude)
+            socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+            socket?.delegate = self
+            socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser))
+        }
+    }
+    
+    func onConnected(connection: WebSocketConnection) {
+           print("Connected!")
+       }
+       
+       func onDisconnected(connection: WebSocketConnection, error: Error?) {
+           print("Disconnected!")
+       }
+       
+       func onError(connection: WebSocketConnection, error: Error) {
+           print("Error \(error)")
+       }
+       
+       func onMessage(connection: WebSocketConnection, text: String) {
+           DispatchQueue.main.async {
+               //self.SendView.text.append("\(text)\n")
+           }
+       }
 
 }
 
