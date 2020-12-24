@@ -15,5 +15,8 @@ target 'JoggingTracker' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'Firebase/Auth', '7.2-M1'
   pod 'Firebase/Firestore', '7.2-M1'
+  
+  # Add the pod for Firebase Cloud Messaging
+  pod 'Firebase/Messaging', '7.2-M1'
 
 end

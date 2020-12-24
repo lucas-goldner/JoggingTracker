@@ -231,6 +231,9 @@ PODS:
   - Firebase/Firestore (7.2.0-M1):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 7.2.0)
+  - Firebase/Messaging (7.2.0-M1):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 7.2.0)
   - FirebaseAnalytics (7.2.0-M1):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
@@ -271,6 +274,18 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (7.3.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+  - FirebaseMessaging (7.2.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstanceID (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Reachability (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
   - GoogleAppMeasurement (7.2.0-M1):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -336,6 +351,7 @@ DEPENDENCIES:
   - Firebase/Analytics (= 7.2-M1)
   - Firebase/Auth (= 7.2-M1)
   - Firebase/Firestore (= 7.2-M1)
+  - Firebase/Messaging (= 7.2-M1)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -349,6 +365,8 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -370,6 +388,8 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: d50e11039e5984d92c8a512be2395f13df747350
   FirebaseFirestore: 526c70e247f550206e5c02a7bafc264588847499
   FirebaseInstallations: 971df89b48ae5ee4cc2bf6935f3857a525d28550
+  FirebaseInstanceID: 5ccdee6a84e6b4bb5316de0a8cd88bc749ba490d
+  FirebaseMessaging: 7091222bfac24ca89c569c3c59e58390311e487f
   GoogleAppMeasurement: 793ab7b9a09326f991c089152a2ba5beecef0c83
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
@@ -381,6 +401,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b2fd6f845143c95338ee577999d17d1e2c845b54
+PODFILE CHECKSUM: 4bd7124dd58d22b588f75e3a454cd2a98c8bd5eb
 
 COCOAPODS: 1.10.0

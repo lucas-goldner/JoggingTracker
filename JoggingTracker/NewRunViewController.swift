@@ -13,6 +13,7 @@ class NewRunViewController: UIViewController, WebSocketConnectionDelegate {
     var isConnected = false
     let db = Firestore.firestore()
     var socket: NativeWebSocket?
+    var friendsArray:Array<String> = []
     
     @IBOutlet weak var StartButtonStyle: UIButton!
     @IBAction func StartButton(_ sender: Any) {
@@ -63,6 +64,7 @@ class NewRunViewController: UIViewController, WebSocketConnectionDelegate {
     }
     
     private func startRun() {
+        getUserInfo()
         StartButtonStyle.isHidden = true
         StopStyle.isHidden = false
         seconds = 0
@@ -77,8 +79,7 @@ class NewRunViewController: UIViewController, WebSocketConnectionDelegate {
         //Websocket
         socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
         socket?.delegate = self
-        getUserInfo()
-        sendDataToServer()
+
     }
     
     func getUserInfo() {
@@ -87,16 +88,14 @@ class NewRunViewController: UIViewController, WebSocketConnectionDelegate {
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                print(document.get("friends"))
+                self.friendsArray = document.get("friends") as! Array<String>
+                self.socket?.send(text: "furiendo:"+self.friendsArray[0]+"XxX"+"hxT<2DZ%$zw=nolPs?r>c^x]KqAZ0_a*u.hd~YEuys[2PyoHJr)B.,<|EDAU@.-" )
             } else {
                 print("Document does not exist")
             }
         }
     }
     
-    func sendDataToServer() {
-        
-    }
     
     private func stopRun() {
         let alertController = UIAlertController(title: "End run?",

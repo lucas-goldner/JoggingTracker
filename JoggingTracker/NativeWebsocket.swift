@@ -114,6 +114,14 @@ class NativeWebSocket: NSObject, WebSocketConnection, URLSessionWebSocketDelegat
             }
         }
     }
+    
+//    func send(json: JSON) {
+//        webSocketTask.send(URLSessionWebSocketTask.Message.data(data)) { error in
+//            if let error = error {
+//                self.delegate?.onError(connection: self, error: error)
+//            }
+//        }
+//    }
 }
 
 //http://lucumr.pocoo.org/2012/9/24/websockets-101/

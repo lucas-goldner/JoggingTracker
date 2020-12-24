@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		4D24DF692589627A00123CE7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF682589627900123CE7 /* LocationManager.swift */; };
 		4D24DF6E2589688900123CE7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24DF6D2589688900123CE7 /* CoreDataStack.swift */; };
 		4D32D8662590057B0083B48C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D32D8652590057B0083B48C /* GoogleService-Info.plist */; };
+		4D4C91042592843000549A83 /* Notification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 4D4C91032592843000549A83 /* Notification.apns */; };
 		4D53239F2591EB1B00407229 /* NativeWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53239E2591EB1B00407229 /* NativeWebSocket.swift */; };
 		4DFFAB3D258814A50074784C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB3C258814A50074784C /* AppDelegate.swift */; };
 		4DFFAB3F258814A50074784C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFFAB3E258814A50074784C /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		3250534FA61A6D56557BD59E /* Pods-JoggingTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggingTracker.release.xcconfig"; path = "Target Support Files/Pods-JoggingTracker/Pods-JoggingTracker.release.xcconfig"; sourceTree = "<group>"; };
 		4D19A6102588219B0066361C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		4D24C5512592557500ECCD2A /* JoggingTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JoggingTracker.entitlements; sourceTree = "<group>"; };
 		4D24DF572589478200123CE7 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		4D24DF5A25894FCF00123CE7 /* RunsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsListViewController.swift; sourceTree = "<group>"; };
 		4D24DF5D2589507800123CE7 /* NewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 		4D24DF682589627900123CE7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4D24DF6D2589688900123CE7 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		4D32D8652590057B0083B48C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D4C91032592843000549A83 /* Notification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notification.apns; sourceTree = "<group>"; };
 		4D53239E2591EB1B00407229 /* NativeWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeWebSocket.swift; sourceTree = "<group>"; };
 		4DFFAB39258814A50074784C /* JoggingTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFFAB3C258814A50074784C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		4DFFAB3B258814A50074784C /* JoggingTracker */ = {
 			isa = PBXGroup;
 			children = (
+				4D24C5512592557500ECCD2A /* JoggingTracker.entitlements */,
 				4D32D8652590057B0083B48C /* GoogleService-Info.plist */,
 				4D24DF6D2589688900123CE7 /* CoreDataStack.swift */,
 				4DFFAB3C258814A50074784C /* AppDelegate.swift */,
@@ -100,6 +104,7 @@
 				4D24DF652589623700123CE7 /* FormatDisplay.swift */,
 				4D24DF682589627900123CE7 /* LocationManager.swift */,
 				4D53239E2591EB1B00407229 /* NativeWebSocket.swift */,
+				4D4C91032592843000549A83 /* Notification.apns */,
 			);
 			path = JoggingTracker;
 			sourceTree = "<group>";
@@ -158,7 +163,7 @@
 				};
 			};
 			buildConfigurationList = 4DFFAB34258814A50074784C /* Build configuration list for PBXProject "JoggingTracker" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -184,6 +189,7 @@
 				4D32D8662590057B0083B48C /* GoogleService-Info.plist in Resources */,
 				4DFFAB46258814A60074784C /* Assets.xcassets in Resources */,
 				4DFFAB44258814A50074784C /* Main.storyboard in Resources */,
+				4D4C91042592843000549A83 /* Notification.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -379,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -395,10 +401,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JoggingTracker/JoggingTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MGA58Y526H;
 				INFOPLIST_FILE = JoggingTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -417,10 +424,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JoggingTracker/JoggingTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MGA58Y526H;
 				INFOPLIST_FILE = JoggingTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
