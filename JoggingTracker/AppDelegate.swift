@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
         Messaging.messaging().delegate = self
         // Override point for customization after application launch.
      
-  
+
       
         return true
     }
@@ -133,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
             socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
             socket?.delegate = self
             socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser))
+
         }
     }
     
@@ -160,7 +161,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
 extension AppDelegate : MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
       print("Firebase registration token: \(String(describing: fcmToken))")
-
+        let defaults = UserDefaults.standard
+        let defaultValue = ["regToken" : fcmToken]
+        defaults.register(defaults: defaultValue)
       let dataDict:[String: String] = ["token": fcmToken ?? ""]
       NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
       // TODO: If necessary send token to application server.

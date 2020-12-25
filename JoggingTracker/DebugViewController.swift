@@ -68,7 +68,7 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
         super.viewDidLoad()
         //socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
         //socket?.delegate = self
-        OutputView.text = Auth.auth().currentUser?.uid
+
     }
     
     func getUserInfo() {
@@ -103,4 +103,5 @@ class DebugViewController: UIViewController, WebSocketConnectionDelegate {
        return nil
     }
 }
+
 
