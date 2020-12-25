@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
 
         application.registerForRemoteNotifications()
 
+
         
         Messaging.messaging().delegate = self
         // Override point for customization after application launch.
@@ -101,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         var locManager = CLLocationManager()
+        let regToken = UserDefaults.standard.object(forKey: "regToken") as? String
         locManager.requestWhenInUseAuthorization()
         var currentLocation: CLLocation!
         let currentUser = (Auth.auth().currentUser?.uid)!
@@ -113,13 +115,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
             print(currentLocation.coordinate.longitude)
             socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
             socket?.delegate = self
-            socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser))
+            socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser)+"fff"+regToken!)
         }
     }
     
     func applicationDidEnterBackground(_ application: UIApplication){
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         var locManager = CLLocationManager()
+        let regToken = UserDefaults.standard.object(forKey: "regToken") as? String
         locManager.requestWhenInUseAuthorization()
         var currentLocation: CLLocation!
         let currentUser = (Auth.auth().currentUser?.uid)!
@@ -132,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
             print(currentLocation.coordinate.longitude)
             socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
             socket?.delegate = self
-            socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser))
+            socket?.send(text: "Locasione:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser)+"fff"+regToken!)
 
         }
     }
@@ -161,9 +164,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
 extension AppDelegate : MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
       print("Firebase registration token: \(String(describing: fcmToken))")
-        let defaults = UserDefaults.standard
-        let defaultValue = ["regToken" : fcmToken]
-        defaults.register(defaults: defaultValue)
+        UserDefaults.standard.set(fcmToken, forKey: "regToken")
+        UserDefaults.standard.synchronize()
+        print("registered token")
       let dataDict:[String: String] = ["token": fcmToken ?? ""]
       NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
       // TODO: If necessary send token to application server.
