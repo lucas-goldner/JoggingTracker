@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
       
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -206,12 +208,21 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     if let messageID = userInfo[gcmMessageIDKey] {
       print("Message ID: \(messageID)")
     }
-
-    // With swizzling disabled you must let Messaging know about the message, for Analytics
-    // Messaging.messaging().appDidReceiveMessage(userInfo)
-
-    // Print full message.
-    print(userInfo)
+    
+    let application = UIApplication.shared
+     
+     if(application.applicationState == .active){
+        
+       print("user tapped the notification bar when the app is in foreground")
+        if(userInfo.description.contains("Dein Freund ist am Joggen")) {
+            print("Easy")
+        }
+     }
+     
+     if(application.applicationState == .inactive)
+     {
+       print("user tapped the notification bar when the app is in background")
+     }
 
     completionHandler()
   }

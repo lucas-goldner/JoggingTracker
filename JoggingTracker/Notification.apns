@@ -2,12 +2,8 @@
 {
     "aps" : {
         "alert" : {
-            "title" : "Game Request",
-            "body" : "Bob wants to play poker",
-            "action-loc-key" : "PLAY"
+            "title" : "Dein Freund ist am Joggen",
+            "body" : "Schick ihm ne Anfrage bro ",
         },
-        "badge" : 5
     },
-    "acme1" : "bar",
-    "acme2" : [ "bang",  "whiz" ]
 }
