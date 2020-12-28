@@ -18,6 +18,5 @@ target 'JoggingTracker' do
   
   # Add the pod for Firebase Cloud Messaging
   pod 'Firebase/Messaging', '7.2-M1'
-  pod 'BulletinBoard'
 
 end
