@@ -12,7 +12,7 @@
         <!--Home Boy-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +264,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO3-ka-DDh">
-                                <rect key="frame" x="20" y="484" width="374" height="72"/>
+                                <rect key="frame" x="20" y="314" width="374" height="72"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Decline">
@@ -285,16 +285,31 @@
                                     <action selector="AcceptButton:" destination="Vmy-uM-1PR" eventType="touchUpInside" id="pfX-4p-QDZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siu-cY-Dws">
+                                <rect key="frame" x="20" y="447" width="374" height="72"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Request">
+                                    <color key="titleColor" systemColor="systemGray6Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="DeclineButton:" destination="Vmy-uM-1PR" eventType="touchUpInside" id="KEY-5G-JYb"/>
+                                    <action selector="RequestButton:" destination="Vmy-uM-1PR" eventType="touchUpInside" id="Prd-Ee-vhS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Fc-sr-9GR"/>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="A43-zL-6jv" secondAttribute="trailing" constant="20" id="4nh-yL-HtA"/>
                             <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="FO3-ka-DDh" secondAttribute="trailing" constant="20" id="GQg-Yx-5Xq"/>
+                            <constraint firstItem="9Fc-sr-9GR" firstAttribute="bottom" secondItem="FO3-ka-DDh" secondAttribute="bottom" constant="422" id="Jcp-Lu-1ED"/>
                             <constraint firstItem="FO3-ka-DDh" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="T1G-np-mcQ"/>
+                            <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="siu-cY-Dws" secondAttribute="trailing" constant="20" id="act-zh-hfd"/>
                             <constraint firstItem="A43-zL-6jv" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="hXp-7Q-ggz"/>
-                            <constraint firstItem="9Fc-sr-9GR" firstAttribute="bottom" secondItem="FO3-ka-DDh" secondAttribute="bottom" constant="252" id="hcf-O7-NIy"/>
                             <constraint firstItem="A43-zL-6jv" firstAttribute="top" secondItem="9Fc-sr-9GR" secondAttribute="top" constant="176" id="nfV-ct-F0N"/>
+                            <constraint firstItem="siu-cY-Dws" firstAttribute="top" secondItem="FO3-ka-DDh" secondAttribute="bottom" constant="61" id="qyp-2z-Wnr"/>
+                            <constraint firstItem="siu-cY-Dws" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="xIc-ZQ-e8S"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fTO-Iq-dvp"/>
@@ -476,7 +491,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="scS-N2-JoO"/>
+        <segue reference="feb-PG-oor"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
