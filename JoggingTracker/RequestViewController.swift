@@ -7,21 +7,44 @@
 
 import UIKit
 import FirebaseAuth
-
+import CoreLocation
 
 class RequestViewController: UIViewController, WebSocketConnectionDelegate {
     var socket: NativeWebSocket?
     var requestID = ""
+    let currentUser = (Auth.auth().currentUser?.uid)!
     
     @IBAction func AcceptButton(_ sender: Any) {
+        let regToken = UserDefaults.standard.object(forKey: "regToken") as? String
+        let currentUser = (Auth.auth().currentUser?.uid)!
+        let regTokenToSend = self.requestID
+        var locManager = CLLocationManager()
+        locManager.requestWhenInUseAuthorization()
+        var currentLocation: CLLocation!
+        if
+           CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+           CLLocationManager.authorizationStatus() ==  .authorizedAlways
+        {
+            currentLocation = locManager.location
+            print(currentLocation.coordinate.latitude)
+            print(currentLocation.coordinate.longitude)
+            socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+            socket?.delegate = self
+            socket?.send(text: "AcceptLock:"+String(currentLocation.coordinate.latitude)+"xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"_"+String(currentLocation.coordinate.longitude)+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser)+"fff"+regToken!+"vvv"+regTokenToSend)
+        }
     }
     @IBAction func DeclineButton(_ sender: Any) {
+        let regToken = UserDefaults.standard.object(forKey: "regToken") as? String
+        let currentUser = (Auth.auth().currentUser?.uid)!
+        let regTokenToSend = self.requestID
+        socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+        socket?.delegate = self
+        socket?.send(text: "Declino:xN2.;Mlkd,0qD\"wPa_]Ne>}:uHlN9)jf"+"[>Susnt27hfINdn,xjU0&[6ejvZ_;\"P"+"...."+String(currentUser)+"fff"+regToken!+"vvv"+regTokenToSend)
     }
     @IBAction func RequestButton(_ sender: Any) {
         let alert = UIAlertController(title: "Send Joggin Request?", message: "Do you want to jog with her or not.", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-            let currentUser = (Auth.auth().currentUser?.uid)!
             let regTokenToSend = self.requestID
             let regToken = UserDefaults.standard.object(forKey: "regToken") as? String
             self.socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
