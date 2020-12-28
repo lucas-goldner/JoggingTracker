@@ -219,13 +219,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
      if(application.applicationState == .active){
         
        print("user tapped the notification bar when the app is in foreground")
-        if(userInfo.description.contains("Dein Freund ist am Joggen")) {
-            //Here some event should happen
-            print("event")
-       
-            rootViewController.present(controller, animated: true, completion: { () -> Void in
-
-            })
+        if(userInfo.description.contains("Dein Freund") && userInfo.description.contains("ist am Joggen")) {
+            print(userInfo)
+//            rootViewController.present(controller, animated: true, completion: { () -> Void in
+//
+//            })
             
         }
      }
@@ -233,6 +231,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
      if(application.applicationState == .inactive)
      {
        print("user tapped the notification bar when the app is in background")
+        if(userInfo.description.contains("Dein Freund ist am Joggen")) {
+       
+            rootViewController.present(controller, animated: true, completion: { () -> Void in
+
+            })
+            
+        }
      }
 
     completionHandler()
