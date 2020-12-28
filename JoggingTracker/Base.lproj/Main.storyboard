@@ -255,6 +255,56 @@
             </objects>
             <point key="canvasLocation" x="1571.0144927536232" y="150.66964285714286"/>
         </scene>
+        <!--Request View Controller-->
+        <scene sceneID="MOa-pQ-y4o">
+            <objects>
+                <viewController storyboardIdentifier="Requester" id="Vmy-uM-1PR" customClass="RequestViewController" customModule="JoggingTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QHR-nL-wGH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO3-ka-DDh">
+                                <rect key="frame" x="20" y="538" width="374" height="72"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" systemColor="systemGray6Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="DeclineButton:" destination="Vmy-uM-1PR" eventType="touchUpInside" id="7vw-Pq-Ru5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A43-zL-6jv">
+                                <rect key="frame" x="20" y="220" width="374" height="72"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" systemColor="systemGray6Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="AcceptButton:" destination="Vmy-uM-1PR" eventType="touchUpInside" id="pfX-4p-QDZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Fc-sr-9GR"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="A43-zL-6jv" secondAttribute="trailing" constant="20" id="4nh-yL-HtA"/>
+                            <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="FO3-ka-DDh" secondAttribute="trailing" constant="20" id="GQg-Yx-5Xq"/>
+                            <constraint firstItem="FO3-ka-DDh" firstAttribute="top" secondItem="A43-zL-6jv" secondAttribute="bottom" constant="246" id="KHa-Bl-BtT"/>
+                            <constraint firstItem="FO3-ka-DDh" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="T1G-np-mcQ"/>
+                            <constraint firstItem="FO3-ka-DDh" firstAttribute="top" secondItem="A43-zL-6jv" secondAttribute="bottom" constant="246" id="amZ-Z5-Hvc"/>
+                            <constraint firstItem="A43-zL-6jv" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="hXp-7Q-ggz"/>
+                            <constraint firstItem="9Fc-sr-9GR" firstAttribute="bottom" secondItem="FO3-ka-DDh" secondAttribute="bottom" constant="252" id="hcf-O7-NIy"/>
+                            <constraint firstItem="A43-zL-6jv" firstAttribute="top" secondItem="9Fc-sr-9GR" secondAttribute="top" constant="176" id="nfV-ct-F0N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fTO-Iq-dvp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ka5-e3-Jek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197" y="899"/>
+        </scene>
         <!--Debug View Controller-->
         <scene sceneID="6hE-GQ-3zs">
             <objects>
@@ -419,6 +469,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lE3-Sh-eFu"/>
+                        <segue destination="Vmy-uM-1PR" kind="show" id="bpc-iy-15y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJV-OA-M9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,6 +497,15 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
     var isConnected = false
     var socket: NativeWebSocket?
     let gcmMessageIDKey = "gcmMessageIDKey"
+ 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let locationManager = LocationManager.shared
@@ -37,13 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
 
         application.registerForRemoteNotifications()
 
-
-        
         Messaging.messaging().delegate = self
-        // Override point for customization after application launch.
      
-
-      
         return true
     }
     
@@ -79,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
       // Print full message.
       print(userInfo)
     }
+    
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -123,7 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WebSocketConnectionDelega
     
     func applicationDidEnterBackground(_ application: UIApplication){
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        var locManager = CLLocationManager()
+        let locManager = CLLocationManager()
         let regToken = UserDefaults.standard.object(forKey: "regToken") as? String
         locManager.requestWhenInUseAuthorization()
         var currentLocation: CLLocation!
@@ -194,7 +191,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
 
     // Print full message.
-    print(userInfo)
+    //print(userInfo)
 
     // Change this to your preferred presentation option
     completionHandler([[.alert, .sound]])
@@ -203,19 +200,33 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
                               withCompletionHandler completionHandler: @escaping () -> Void) {
-    let userInfo = response.notification.request.content.userInfo
-    // Print message ID.
-    if let messageID = userInfo[gcmMessageIDKey] {
-      print("Message ID: \(messageID)")
-    }
     
+    // Print message ID.
+//    if let messageID = userInfo[gcmMessageIDKey] {
+//      print("Message ID: \(messageID)")
+//    }
+   
+    let userInfo = response.notification.request.content.userInfo
     let application = UIApplication.shared
+    
+    guard var rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+           return
+       }
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let controller = storyboard.instantiateViewController(withIdentifier: "Requester") as! RequestViewController
+    
      
      if(application.applicationState == .active){
         
        print("user tapped the notification bar when the app is in foreground")
         if(userInfo.description.contains("Dein Freund ist am Joggen")) {
-            print("Easy")
+            //Here some event should happen
+            print("event")
+       
+            rootViewController.present(controller, animated: true, completion: { () -> Void in
+
+            })
+            
         }
      }
      
