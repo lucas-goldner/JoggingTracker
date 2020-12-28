@@ -263,8 +263,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO3-ka-DDh">
-                                <rect key="frame" x="20" y="538" width="374" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO3-ka-DDh">
+                                <rect key="frame" x="20" y="484" width="374" height="72"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Decline">
@@ -274,8 +274,8 @@
                                     <action selector="DeclineButton:" destination="Vmy-uM-1PR" eventType="touchUpInside" id="7vw-Pq-Ru5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A43-zL-6jv">
-                                <rect key="frame" x="20" y="220" width="374" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A43-zL-6jv">
+                                <rect key="frame" x="20" y="176" width="374" height="72"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Accept">
@@ -291,9 +291,7 @@
                         <constraints>
                             <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="A43-zL-6jv" secondAttribute="trailing" constant="20" id="4nh-yL-HtA"/>
                             <constraint firstItem="9Fc-sr-9GR" firstAttribute="trailing" secondItem="FO3-ka-DDh" secondAttribute="trailing" constant="20" id="GQg-Yx-5Xq"/>
-                            <constraint firstItem="FO3-ka-DDh" firstAttribute="top" secondItem="A43-zL-6jv" secondAttribute="bottom" constant="246" id="KHa-Bl-BtT"/>
                             <constraint firstItem="FO3-ka-DDh" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="T1G-np-mcQ"/>
-                            <constraint firstItem="FO3-ka-DDh" firstAttribute="top" secondItem="A43-zL-6jv" secondAttribute="bottom" constant="246" id="amZ-Z5-Hvc"/>
                             <constraint firstItem="A43-zL-6jv" firstAttribute="leading" secondItem="9Fc-sr-9GR" secondAttribute="leading" constant="20" id="hXp-7Q-ggz"/>
                             <constraint firstItem="9Fc-sr-9GR" firstAttribute="bottom" secondItem="FO3-ka-DDh" secondAttribute="bottom" constant="252" id="hcf-O7-NIy"/>
                             <constraint firstItem="A43-zL-6jv" firstAttribute="top" secondItem="9Fc-sr-9GR" secondAttribute="top" constant="176" id="nfV-ct-F0N"/>
@@ -303,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ka5-e3-Jek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="899"/>
+            <point key="canvasLocation" x="-197.10144927536234" y="898.66071428571422"/>
         </scene>
         <!--Debug View Controller-->
         <scene sceneID="6hE-GQ-3zs">
