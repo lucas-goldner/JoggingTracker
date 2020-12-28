@@ -22,11 +22,11 @@ class RequestViewController: UIViewController, WebSocketConnectionDelegate {
 
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
             let currentUser = (Auth.auth().currentUser?.uid)!
-            print(self.requestID)
-//            self.socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
-//            self.socket?.delegate = self
-//            self.socket?.send(text: "JogReq:P7vS2;9,iMt_b!uQ6%+TK%=..1Qh#5Rva]"+currentUser+"CuBN=]p6F3bZ5:WdVuK;BQJf1DN")
-//            print("Request sent!")
+            let regTokenToSend = self.requestID
+            self.socket = NativeWebSocket(url: URL(string: "ws://localhost:1337")!, autoConnect: true)
+            self.socket?.delegate = self
+            self.socket?.send(text: "JogReq:P7vS2;9,iMt_b!uQ6%+TK%=..1Qh#5Rva]"+currentUser+"CuBN=]p6F3bZ5:WdVuK;BQJf1DN"+"..."+regTokenToSend)
+            print("Request sent!")
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

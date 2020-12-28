@@ -220,10 +220,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
        print("user tapped the notification bar when the app is in foreground")
         if(userInfo.description.contains("Dein Freund") && userInfo.description.contains("ist am Joggen")) {
-            print(userInfo)
-//            rootViewController.present(controller, animated: true, completion: { () -> Void in
-//
-//            })
+            let aps = userInfo["aps"] as? [String: Any]
+            let data = aps?["data"] as? [String: String]
+            let regToken = (data?["regToken"])!
+            rootViewController.present(controller, animated: true, completion: { () -> Void in
+                controller.requestID = regToken
+            })
             
         }
      }
