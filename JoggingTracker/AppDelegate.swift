@@ -226,6 +226,14 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             rootViewController.present(controller, animated: true, completion: { () -> Void in
                 controller.requestID = regToken
             })
+        }
+        if(userInfo.description.contains("will dir beim Jogggen joinen")) {
+            let aps = userInfo["aps"] as? [String: Any]
+            let data = aps?["data"] as? [String: String]
+            let regToken = (data?["regToken"])!
+            rootViewController.present(controller, animated: true, completion: { () -> Void in
+                controller.requestID = regToken
+            })
             
         }
      }
